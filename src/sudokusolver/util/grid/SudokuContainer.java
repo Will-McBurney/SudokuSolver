@@ -38,7 +38,9 @@ public abstract class SudokuContainer implements Observer {
 
 
 	public Set<Integer> getMissing() {
-		return missing;
+		Set<Integer> out = new HashSet<>();
+		out.addAll(missing);
+		return out;
 	}
 
 

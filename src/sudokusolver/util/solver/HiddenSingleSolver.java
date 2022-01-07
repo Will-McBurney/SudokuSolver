@@ -17,7 +17,7 @@ public class HiddenSingleSolver implements OneStepSolver {
 				} else if (c.getPossibilities().size() == 1) {
 					int solution = c.getPossibilities().iterator().next();
 					c.solve(solution);
-					return "Hidden Single Found: Set cell [" + x + " ," + y + "] to " + solution; 
+					return "Hidden Single Found: Set cell [" + x + ", " + y + "] to " + solution; 
 				}
 			}
 		}	
