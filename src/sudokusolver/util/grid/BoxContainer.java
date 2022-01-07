@@ -28,4 +28,16 @@ public class BoxContainer extends SudokuContainer {
 	public String toString() {
 		return "Box " + boxNumber + ": " + super.toString();
 	}
+
+	@Override
+	public String getContainerType() {
+		// TODO Auto-generated method stub
+		return "Box";
+	}
+
+	@Override
+	public int getContainerID() {
+		// TODO Auto-generated method stub
+		return boxNumber;
+	}
 }

@@ -28,4 +28,16 @@ public class ColumnContainer extends SudokuContainer {
 	public String toString() {
 		return "Col " + colNumber + ": " + super.toString();
 	}
+
+	@Override
+	public String getContainerType() {
+		// TODO Auto-generated method stub
+		return "Column";
+	}
+
+	@Override
+	public int getContainerID() {
+		// TODO Auto-generated method stub
+		return colNumber;
+	}
 }

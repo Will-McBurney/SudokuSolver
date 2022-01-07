@@ -17,17 +17,16 @@ public class Sudoku9x9TextReaderDemo {
 		settings.setGridSize(9);
 		Sudoku9x9TextReader s = new Sudoku9x9TextReader("test9x9hard.txt");
 		SudokuGrid g = s.read();
-		System.out.println(g.getGridAsString());
-		System.out.println(g);
+		//System.out.println(g.getGridAsString());
+		//System.out.println(g);
 		OneStepSolver only = new OnlyPossibleCellSolver();
 		OneStepSolver single = new HiddenSingleSolver();
 		OneStepSolver pair = new NakedPairSolver();
 		OneStepSolver pointing = new PointingLineSolver();
 		OneStepSolver triplet = new NakedTripleSolver();
 		OneStepSolver boxLine = new BoxLineReductionSolver();
-		String st = only.solveOneStep(g);
+		String st = " ";
 		while(st != "") {
-			System.out.println(st);
 			st = single.solveOneStep(g);
 			if (st == "") {
 				st = only.solveOneStep(g);
@@ -44,6 +43,7 @@ public class Sudoku9x9TextReaderDemo {
 			if (st == "") {
 				st = triplet.solveOneStep(g);
 			}
+			System.out.println(st);
 			
 		}
 		System.out.println(g);

@@ -95,7 +95,12 @@ public class Cell extends Observable{
 	}
 		
 	public Set<Integer> getPossibilities() {
-		return possibilities;
+		if (possibilities == null) {
+			return null;
+		}
+		Set<Integer> out = new HashSet<Integer>();
+		out.addAll(possibilities);
+		return out;
 	}
 	
 	

@@ -35,7 +35,9 @@ public abstract class SudokuContainer implements Observer {
 		return cells;
 	}
 
-
+	public abstract String getContainerType();
+	
+	public abstract int getContainerID();
 
 	public Set<Integer> getMissing() {
 		Set<Integer> out = new HashSet<>();
