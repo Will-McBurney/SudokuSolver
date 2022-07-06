@@ -19,7 +19,7 @@ public class HiddenSingleSolver implements OneStepSolver {
 			}
 		}	
 		
-		return "";
+		return null;
 	}
 
 }

@@ -26,7 +26,7 @@ public class PointingLineSolver implements OneStepSolver{
 				}
 			}
 		}
-		return "";
+		return null;
 	}
 
 	private List<Cell> getCellsWith(int target, BoxContainer b) {

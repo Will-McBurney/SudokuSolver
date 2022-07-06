@@ -8,13 +8,16 @@ import java.io.IOException;
 
 
 
-public class Sudoku6x6TextReader {
+public class Sudoku6x6TextReader extends SudokuReader {
 	public String filename;
 	
 	public Sudoku6x6TextReader(String filename) {
+		SettingsSingleton settings = SettingsSingleton.getInstance();
+		settings.setGridSize(6);
 		this.filename = filename;
 	}
 	
+	@Override
 	public SudokuGrid read() {
 		SudokuGrid grid = new SudokuGrid();
 		

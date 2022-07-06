@@ -44,7 +44,7 @@ public class OnlyPossibleCellSolver implements OneStepSolver {
 			}
 		}
 		
-		return "";
+		return null;
 	}
 	
 	private Cell getOnlyCellWithValue(int value, SudokuContainer container) {

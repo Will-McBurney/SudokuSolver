@@ -8,10 +8,12 @@ import java.io.IOException;
 
 
 
-public class Sudoku9x9TextReader {
+public class Sudoku9x9TextReader extends SudokuReader {
 	private String filename;
 	
 	public Sudoku9x9TextReader(String filename) {
+		SettingsSingleton settings = SettingsSingleton.getInstance();
+		settings.setGridSize(9);
 		this.filename = filename;
 	}
 	

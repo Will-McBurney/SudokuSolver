@@ -12,6 +12,17 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	
+	manifest {
+		attributes 'Main-Class': 'edu.virginia.cs.sde.sudokusolver'
+	
+	from {
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 dependencies {
  	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
 }

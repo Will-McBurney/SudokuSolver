@@ -52,7 +52,7 @@ public class NakedPairSolver implements OneStepSolver {
 			}
 		}
 		
-		return "";
+		return null;
 	}
 	
 	private List<Cell[]> getNakedPairs(SudokuContainer container) {

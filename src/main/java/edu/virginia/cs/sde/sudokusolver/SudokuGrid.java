@@ -92,8 +92,18 @@ public class SudokuGrid implements Observer {
 	
 	public String getGridAsString() {
 		StringBuilder sb = new StringBuilder();
+		int rowCounter = 0;
 		for (RowContainer row : rows) {
+			if (rowCounter > 0 && rowCounter % (size/3) == 0) {
+				sb.append("---+---+---\n");
+			}
+			rowCounter++;
+			int columnCounter = 0;
 			for (Cell c : row.getCells()) {
+				if (columnCounter > 0 && columnCounter % 3 == 0) {
+					sb.append("|");
+				}
+				columnCounter++;
 				if (c.isSolved()) {
 					sb.append(c.getSolution());
 				} else {

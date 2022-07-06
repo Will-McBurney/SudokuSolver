@@ -87,7 +87,7 @@ public class NakedTripleSolver implements OneStepSolver{
 			}
 		}
 		
-		return "";
+		return null;
 	}
 	
 	private List<Cell[]> getNakedTriplets(SudokuContainer container) {

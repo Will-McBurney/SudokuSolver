@@ -32,7 +32,7 @@ public class BoxLineReductionSolver implements OneStepSolver {
 				}
 			}
 		}
-		return "";
+		return null;
 	}
 	
 	private List<Cell> getCellsWithPossibility(SudokuContainer container, int possibility) {
