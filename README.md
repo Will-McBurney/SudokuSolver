@@ -18,20 +18,20 @@ You can find examples of sudoku input files in the root directory:
 
 Note that this program supports solving:
 
-9x9 Sudoku
+9x9 Sudoku  
 6x6 Sudoku
 
-It currently utilizes the following strategies:
--Hidden Single
--Naked Single
--Pointing Pair
--Box Line Reduction
--Naked Pair
--Naked Triplet
+It currently utilizes the following strategies:  
+-Hidden Single  
+-Naked Single  
+-Pointing Pair  
+-Box Line Reduction  
+-Naked Pair  
+-Naked Triplet  
 
-Planned to be implemented:
--Hidden Pair
--Hidden Triplet
+Planned to be implemented:  
+-Hidden Pair  
+-Hidden Triplet  
 
 You can read more about these strategies at:
 https://www.sudokuwiki.org/sudoku.htm
