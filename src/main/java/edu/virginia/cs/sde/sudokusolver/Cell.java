@@ -4,12 +4,12 @@ import java.util.Observable;
 import java.util.Set;
 
 public class Cell extends Observable{	
-	private int row; //which row the cell is in
-	private int col; //which column the cell is in
-	private int box; //which box the cell is in
-	private boolean isSolved; // whether or not the box is solved yet
-	private Set<Integer> possibilities; //a solved cell has a null possibilities value
-	private int solution; // -1 when unsolved
+	protected int row; //which row the cell is in
+	protected int col; //which column the cell is in
+	protected int box; //which box the cell is in
+	protected boolean isSolved; // whether or not the box is solved yet
+	protected Set<Integer> possibilities; //a solved cell has a null possibilities value
+	protected int solution; // -1 when unsolved
 	
 	/**
 	 * Constructor for an unsolved cell

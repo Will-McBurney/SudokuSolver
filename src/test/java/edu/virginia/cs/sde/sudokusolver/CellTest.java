@@ -113,7 +113,7 @@ class CellTest {
 	
 	@Test
 	void testRemovePossibilitiesUnsolvedWasNotPossible() {
-		Set<Integer> possibilities = unsolved.getPossibilities();
+		Set<Integer> possibilities = unsolved.possibilities;
 		possibilities.clear();
 		possibilities.add(1);
 		possibilities.add(2);
@@ -133,7 +133,7 @@ class CellTest {
 	
 	@Test
 	void testRemovePossibilitiesUnsolvedWasPossibleSmaller() {
-		Set<Integer> possibilities = unsolved.getPossibilities();
+		Set<Integer> possibilities = unsolved.possibilities;
 		possibilities.clear();
 		possibilities.add(1);
 		possibilities.add(2);
@@ -154,7 +154,7 @@ class CellTest {
 	
 	@Test
 	void testLastPossibilityRemoved() {
-		Set<Integer> possibilities = unsolved.getPossibilities();
+		Set<Integer> possibilities = unsolved.possibilities;
 		possibilities.clear();
 		possibilities.add(5);
 		

@@ -63,7 +63,7 @@ class SudokuContainerTest {
 	@Test
 	void testAddUnsolvedCellMissing() {
 		r.addCell(c0);
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		assertEquals(9, missing.size());
 		for (int i = 1; i <= singleton.getGridSize(); i++) {
 			assertTrue(missing.contains(i));
@@ -114,7 +114,7 @@ class SudokuContainerTest {
 	@Test
 	void testAddSolvedCellMissing() {
 		r.addCell(c2);
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		assertEquals(8, missing.size());
 		assertFalse(missing.contains(1));
 		for (int i = 2; i <= singleton.getGridSize(); i++) {
@@ -128,7 +128,7 @@ class SudokuContainerTest {
 		cells.add(c0);
 		
 		r.addCell(c1);
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		assertEquals(9, missing.size());
 		for (int i = 1; i <= singleton.getGridSize(); i++) {
 			assertTrue(missing.contains(i));
@@ -175,7 +175,7 @@ class SudokuContainerTest {
 		cells.add(c1);
 		
 		r.addCell(c2);
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		assertEquals(8, missing.size());
 		assertFalse(missing.contains(1));
 		for (int i = 2; i <= singleton.getGridSize(); i++) {
@@ -216,7 +216,7 @@ class SudokuContainerTest {
 		r.addCell(c0);
 		r.addCell(c1);
 		c1.solve(9);
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		assertEquals(8, missing.size());
 		assertFalse(missing.contains(9));
 		for (int i = 1; i <= 8; i++) {
@@ -230,7 +230,7 @@ class SudokuContainerTest {
 		r.addCell(c1);
 		r.addCell(c2);
 		c1.solve(9);
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		assertEquals(7, missing.size());
 		assertFalse(missing.contains(1));
 		assertFalse(missing.contains(9));
@@ -246,7 +246,7 @@ class SudokuContainerTest {
 		r.addCell(c1);
 		r.addCell(c2);
 		c1.solve(2);
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		assertEquals(0, missing.size());
 	}
 	
@@ -263,11 +263,6 @@ class SudokuContainerTest {
 	@Test 
 	void testAddCellTwoSolvedSize() {
 		
-		//Bad testing style to include the next 3 lines.
-//		r.addCell(c0);
-//		r.addCell(c1);
-//		r.addCell(c2);
-		
 		//add the requisite cells
 		List<Cell> cells = r.getCells();
 		Cell c0 = new Cell(0, 0, 0);
@@ -278,7 +273,7 @@ class SudokuContainerTest {
 		cells.add(c1); //unsolved
 		cells.add(c2); //unsolved
 		
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		missing.remove(9);
 		c0.removePossibility(9);
 		c1.removePossibility(9);	
@@ -302,18 +297,18 @@ class SudokuContainerTest {
 		Cell c3 = new Cell(0, 2, 0, 1);
 		cells.add(c0); //unsolved
 		cells.add(c1); //unsolved
-		cells.add(c2); //unsolved
+		cells.add(c2); //solved
 		
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		missing.remove(9);
 		c0.removePossibility(9);
 		c1.removePossibility(9);	
 		
 		
-		r.addCell(c3);
-		assertEquals(7, missing.size());
+		r.addCell(c3); //solved
 		assertFalse(missing.contains(1));
 		assertFalse(missing.contains(9));
+		assertEquals(7, missing.size());
 		for (int i = 2; i <= 8; i++) {
 			assertTrue(missing.contains(i));
 		}
@@ -332,7 +327,7 @@ class SudokuContainerTest {
 		cells.add(c1); //unsolved
 		cells.add(c2); //unsolved
 		
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		missing.remove(9);
 		c0.removePossibility(9);
 		c1.removePossibility(9);	
@@ -355,7 +350,7 @@ class SudokuContainerTest {
 		cells.add(c1); //unsolved
 		cells.add(c2); //unsolved
 		
-		Set<Integer> missing = r.getMissing();
+		Set<Integer> missing = r.missing;
 		missing.remove(9);
 		c0.removePossibility(9);
 		c1.removePossibility(9);	
