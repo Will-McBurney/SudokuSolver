@@ -25,6 +25,7 @@ public class Sudoku9x9TextReader {
 			
 			while(line != null) {
 				if (line.length() != 9) {
+					br.close();
 					throw new IllegalStateException("Error: Formatted file has invalid length at line " + row + " - " + line);
 				}
 				for (int col = 0; col < 9; col++) {

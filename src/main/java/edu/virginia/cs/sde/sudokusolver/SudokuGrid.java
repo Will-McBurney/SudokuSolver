@@ -5,7 +5,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 
-
+@SuppressWarnings("deprecation")
 public class SudokuGrid implements Observer {
 	private List<RowContainer> rows;
 	private List<ColumnContainer> columns;

@@ -1,8 +1,5 @@
 package edu.virginia.cs.sde.sudokusolver;
 
-import java.util.List;
-
-
 
 public class OnlyPossibleCellSolver implements OneStepSolver {
 

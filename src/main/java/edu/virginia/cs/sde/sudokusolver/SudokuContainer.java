@@ -7,6 +7,15 @@ import java.util.Observer;
 import java.util.Set;
 
 
+/**
+ * This class models an abstract Sudoku Container.
+ * 
+ * See RowContainer, ColumnContainer, and GridContainer
+ * @author pm8fc
+ *
+ */
+
+@SuppressWarnings("deprecation")
 public abstract class SudokuContainer implements Observer {
 	protected List<Cell> cells;
 	protected Set<Integer> missing;
@@ -28,15 +37,31 @@ public abstract class SudokuContainer implements Observer {
 		}
 	}
 	
-	
+	/**
+	 * Gets the cells in the container as a List
+	 * @return
+	 */
 	public List<Cell> getCells() {
 		return cells;
 	}
 
+	/**
+	 * Returns whether the container is a Column, Row, or Box
+	 * @return
+	 */
 	public abstract String getContainerType();
 	
+	/**
+	 * Returns the integer id of the container (such as the Row#)
+	 * @return
+	 */
 	public abstract int getContainerID();
 
+	/**
+	 * Returns a safe copy of the list of missing values from the container
+	 * Missing is empty when ever cell in the container is solved.
+	 * @return
+	 */
 	public Set<Integer> getMissing() {
 		Set<Integer> out = new HashSet<>();
 		out.addAll(missing);
@@ -44,13 +69,23 @@ public abstract class SudokuContainer implements Observer {
 	}
 
 
-
+	/**
+	 * Returns if the container is solved
+	 */
 	public boolean isSolved() {
+		/**
+		 * Returns if the container is solved
+		 */
 		return missing.size() == 0;
 	}
 
 
-
+	/**
+	 * Adds a new cell to the Container.
+	 * 
+	 * If the cell is solved, this results in the possibilities being removed from other cells
+	 * @param c
+	 */
 	public void addCell(Cell c) {
 		SettingsSingleton s = SettingsSingleton.getInstance();
 		int gridSize = s.getGridSize();
@@ -92,6 +127,7 @@ public abstract class SudokuContainer implements Observer {
 		cells.add(c);
 		c.addObserver(this); //monitor c for solutions
 	}
+	
 	
 	@Override
 	public void update(Observable obj, Object arg) {

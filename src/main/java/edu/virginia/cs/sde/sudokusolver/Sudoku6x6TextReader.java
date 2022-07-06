@@ -25,6 +25,7 @@ public class Sudoku6x6TextReader {
 			
 			while(line != null) {
 				if (line.length() != 6) {
+					br.close();
 					throw new IllegalStateException("Error: Formatted file has invalid length at line " + row + " - " + line + " - length: " + line.length());
 				}
 				for (int col = 0; col < 6; col++) {

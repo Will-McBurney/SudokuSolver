@@ -3,6 +3,13 @@ import java.util.HashSet;
 import java.util.Observable;
 import java.util.Set;
 
+/**
+ * This class represents a Cell in a Sudoku grid
+ * @author pm8fc
+ *
+ */
+
+@SuppressWarnings("deprecation")
 public class Cell extends Observable{	
 	protected int row; //which row the cell is in
 	protected int col; //which column the cell is in
@@ -167,6 +174,10 @@ public class Cell extends Observable{
 		return solution;
 	}
 	
+	/**
+	 * Used in logging as the cells printed coordinates.
+	 * @return
+	 */
 	public String getCoordinates() {
 		return "[" + row + ", " +  col + "]";
 	}
