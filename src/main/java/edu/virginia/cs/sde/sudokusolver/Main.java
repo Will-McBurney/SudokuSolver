@@ -32,7 +32,7 @@ public class Main {
 	}
 
 	private static void readAndSolve(SudokuReader reader) {
-		List<OneStepSolver> solvers = SettingsSingleton.getInstance().getSolvers();
+		List<OneStepSolver> solvers = Settings.getInstance().getSolvers();
 		SudokuGrid grid = reader.read();
 		
 		

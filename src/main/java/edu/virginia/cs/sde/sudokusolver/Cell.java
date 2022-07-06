@@ -26,7 +26,7 @@ public class Cell extends Observable{
 	 */
 	public Cell(int r, int c, int b) {
 		//getGridSize
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		
 		if (r < 0 || r >= gridSize) {
@@ -63,7 +63,7 @@ public class Cell extends Observable{
 	 * @param solution - the boxes initial solved value
 	 */
 	public Cell(int r, int c, int b, int solution) {
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		
 		if (solution < 1 || solution > gridSize) {
@@ -140,7 +140,7 @@ public class Cell extends Observable{
 	 * @param solution
 	 */
 	public void solve(int solution) {
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		
 		if (solution < 1 || solution > gridSize) {

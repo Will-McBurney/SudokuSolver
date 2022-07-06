@@ -10,13 +10,13 @@ import org.junit.jupiter.api.*;
 
 class SudokuContainerTest {
 
-	SettingsSingleton singleton;
+	Settings singleton;
 	SudokuContainer r;
 	Cell c0, c1, c2, c3;
 	
 	@BeforeEach
 	void setup() {
-		singleton = SettingsSingleton.getInstance();
+		singleton = Settings.getInstance();
 		singleton.setGridSize(9);
 		
 		r = new RowContainer(0);

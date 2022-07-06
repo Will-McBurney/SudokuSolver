@@ -13,7 +13,7 @@ class CellTest {
 	
 	@BeforeEach
 	void setup() {
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		s.setGridSize(DEFAULT_TEST_GRID_SIZE);
 		
 		unsolved = new Cell(0, 2, 0);

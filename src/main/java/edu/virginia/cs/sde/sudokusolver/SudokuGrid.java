@@ -17,7 +17,7 @@ public class SudokuGrid implements Observer {
 	 * Creates an empty Sudoku Grid of the size stored in the Singleton grid size field
 	 */
 	public SudokuGrid() {
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		size = gridSize;
 		

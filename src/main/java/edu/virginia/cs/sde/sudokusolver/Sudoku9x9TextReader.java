@@ -12,7 +12,7 @@ public class Sudoku9x9TextReader extends SudokuReader {
 	private String filename;
 	
 	public Sudoku9x9TextReader(String filename) {
-		SettingsSingleton settings = SettingsSingleton.getInstance();
+		Settings settings = Settings.getInstance();
 		settings.setGridSize(9);
 		this.filename = filename;
 	}

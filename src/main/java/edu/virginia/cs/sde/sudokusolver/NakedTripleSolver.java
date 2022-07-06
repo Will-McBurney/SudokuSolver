@@ -161,7 +161,7 @@ public class NakedTripleSolver implements OneStepSolver{
 		if (cell.isSolved()) {
 			return false;
 		}
-		SettingsSingleton settings = SettingsSingleton.getInstance();
+		Settings settings = Settings.getInstance();
 		int size = settings.getGridSize();
 		
 		for (int i = 1; i <= size; i++) {

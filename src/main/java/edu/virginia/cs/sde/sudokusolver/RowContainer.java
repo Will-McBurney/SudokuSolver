@@ -5,7 +5,7 @@ public class RowContainer extends SudokuContainer {
 	public final int rowNumber;
 	
 	public RowContainer(int rowNumber) {
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		
 		if (rowNumber < 0 || rowNumber >= gridSize) {

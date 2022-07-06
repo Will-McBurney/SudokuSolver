@@ -3,19 +3,19 @@ package edu.virginia.cs.sde.sudokusolver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SettingsSingleton {
-	private static SettingsSingleton s;
+public class Settings {
+	private static Settings s;
 	private int gridSize;
 	private List<OneStepSolver> solvers;
 	
-	private SettingsSingleton() {		
+	private Settings() {		
 		gridSize = -1;
 		addCurrentSolvers();
 	}
 
-	public static SettingsSingleton getInstance() {
+	public static Settings getInstance() {
 		if (s == null)
-			s = new SettingsSingleton();
+			s = new Settings();
 		return s;
 	}
 	

@@ -12,7 +12,7 @@ public class Sudoku6x6TextReader extends SudokuReader {
 	public String filename;
 	
 	public Sudoku6x6TextReader(String filename) {
-		SettingsSingleton settings = SettingsSingleton.getInstance();
+		Settings settings = Settings.getInstance();
 		settings.setGridSize(6);
 		this.filename = filename;
 	}

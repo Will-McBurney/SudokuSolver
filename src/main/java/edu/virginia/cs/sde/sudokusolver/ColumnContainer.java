@@ -4,7 +4,7 @@ public class ColumnContainer extends SudokuContainer {
 	public final int colNumber;
 	
 	public ColumnContainer(int colNumber) {
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		
 		if (colNumber < 0 || colNumber >= gridSize) {

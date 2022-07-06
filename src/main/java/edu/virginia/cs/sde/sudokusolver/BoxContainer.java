@@ -5,7 +5,7 @@ public class BoxContainer extends SudokuContainer {
 	public final int boxNumber;
 	
 	public BoxContainer(int boxNumber) {
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		
 		if (boxNumber < 0 || boxNumber >= gridSize) {

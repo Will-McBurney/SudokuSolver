@@ -29,7 +29,7 @@ public abstract class SudokuContainer implements Observer {
 		missing = new HashSet<Integer>();
 		
 		//getGridSize
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		
 		for(int i = 1; i <= gridSize; i++) {
@@ -87,7 +87,7 @@ public abstract class SudokuContainer implements Observer {
 	 * @param c
 	 */
 	public void addCell(Cell c) {
-		SettingsSingleton s = SettingsSingleton.getInstance();
+		Settings s = Settings.getInstance();
 		int gridSize = s.getGridSize();
 		
 		// Is our container full?
