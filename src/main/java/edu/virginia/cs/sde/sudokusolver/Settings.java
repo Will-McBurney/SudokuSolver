@@ -34,8 +34,8 @@ public class Settings {
 
 	private void addCurrentSolvers() {
 		solvers = new ArrayList<>();
+		solvers.add(new NakedSingleSolver());
 		solvers.add(new HiddenSingleSolver());
-		solvers.add(new OnlyPossibleCellSolver());
 		solvers.add(new PointingLineSolver());
 		solvers.add(new BoxLineReductionSolver());
 		solvers.add(new NakedPairSolver());
